@@ -14,7 +14,7 @@ UCF Lite provides the **essential building blocks** for AI-assisted development:
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/PSthelyBlog/ucf-lite
 cd ucf-lite
 
 # Install development dependencies
