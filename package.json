@@ -12,7 +12,11 @@
     "build": "tsc",
     "test": "jest",
     "start": "node dist/cli/index.js",
+    "start:anthropic": "node dist/cli/index.js --anthropic",
+    "start:mock": "node dist/cli/index.js",
     "dev": "ts-node src/cli/index.ts",
+    "dev:anthropic": "ts-node src/cli/index.ts --anthropic",
+    "dev:mock": "ts-node src/cli/index.ts",
     "clean": "rm -rf dist"
   },
   "keywords": ["ucf", "ai", "assistant", "framework", "typescript"],

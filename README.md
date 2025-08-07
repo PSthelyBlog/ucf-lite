@@ -117,6 +117,28 @@ const ucf = new UCFCore({
 
 ## 📦 Built-in Plugins
 
+### AnthropicPlugin
+Enables real AI conversations via Anthropic's Claude API:
+```typescript
+import { AnthropicPlugin } from 'ucf-lite/plugins/anthropic';
+
+// Install the plugin
+const anthropicPlugin = new AnthropicPlugin({
+  apiKey: process.env.ANTHROPIC_API_KEY,  // or from options
+  model: 'claude-opus-4-1-20250805',      // default model
+  maxTokens: 1024,                        // max response length
+  systemPrompts: {
+    catalyst: 'You are a strategic architect...',
+    forge: 'You are an expert implementer...'
+  }
+});
+
+ucf.installPlugin(anthropicPlugin);
+
+// Now chat with real AI
+const response = await ucf.sendMessage('How should I design this API?');
+```
+
 ### LoggerPlugin
 Logs all conversations and ICERC requests:
 ```typescript
@@ -195,9 +217,29 @@ class OpenAIProvider extends BaseAIProvider {
 4. **Testable**: 100% test coverage achievable
 5. **Typed**: Full TypeScript support
 
+## 🌟 Getting Started with Real AI
+
+### 1. Set up Anthropic API Key
+```bash
+# Get your API key from https://console.anthropic.com/
+export ANTHROPIC_API_KEY="your-api-key-here"
+```
+
+### 2. Run the Anthropic Example
+```bash
+npm run dev -- examples/anthropic-example.ts
+```
+
+This demonstrates:
+- Real AI conversations with Claude
+- Persona-based system prompts
+- Multi-turn conversations
+- Error handling and rate limiting
+
 ## 🚦 Future Enhancements (via Plugins)
 
-- Real AI providers (OpenAI, Anthropic)
+- ✅ Real AI providers (Anthropic Claude) - **Available Now!**
+- OpenAI GPT integration
 - Web interface
 - Persistent storage
 - Workflow engine

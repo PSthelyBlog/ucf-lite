@@ -200,5 +200,6 @@ export { UCFPlugin, LoggerPlugin, MetricsPlugin } from './core/plugin';
 export { BaseAIProvider } from './providers/ai-provider';
 export { MockAIProvider } from './providers/mock-ai';
 export { SimpleCLI } from './cli/simple-cli';
+export { AnthropicPlugin } from './plugins/anthropic';
 
 // AI-GENERATED: Forge - Task:RFI-UCF-LITE-20241213-001 - End
